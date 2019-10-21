@@ -1,0 +1,4 @@
+dom1
+srv1
+srv2
+win10
