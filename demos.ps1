@@ -1,5 +1,7 @@
 return "This is a guided demo."
 
+# https://github.com/jdhitsolutions/powershell-fast-and-furious
+
 <#
 these tricks and techniques are intended to be used 
 in an interactive PowerShell sessions, not necessarily
