@@ -2,11 +2,18 @@
 
 return "This is a walk through demo"
 
-get-command Register-ArgumentCompleter
+Get-Command Register-ArgumentCompleter
 help Register-ArgumentCompleter -full
 
 #add completion to a command
 
+# Get-volume -CimSession "<tab>"
+
+Register-ArgumentCompleter -CommandName Get-Volume -ParameterName CimSession -ScriptBlock {
+ Get-content .\computers.txt
+}
+
+# Get-WinEvent -logname
 Register-ArgumentCompleter -CommandName Get-WinEvent -ParameterName Logname -ScriptBlock {
  param($commandName, $parameterName, $wordToComplete, $commandAst, $fakeBoundParameter)
 
@@ -28,7 +35,9 @@ Get-Verb "$wordToComplete*" |
     }
 }
 
+# Get-Command -verb <tab>
 
+#add to your own code
 Function Get-ServiceStatus {
 [cmdletbinding()]
 Param([string]$Computername = $env:COMPUTERNAME)
@@ -42,7 +51,7 @@ Filter = "StartMode ='Auto' AND State<>'Running'"
 Get-Ciminstance @p
 }
 
-# Get-ServiceStatus -computername [tab]
+# Get-ServiceStatus -computername <tab>
 
 Register-ArgumentCompleter -CommandName Get-ServiceStatus -ParameterName Computername -ScriptBlock {
 param($commandName, $parameterName, $wordToComplete, $commandAst, $fakeBoundParameter)
@@ -53,4 +62,4 @@ Get-content c:\scripts\company.txt | where {$_ -like "*$wordtocomplete*"}  |
     }
 }
 
-# Get-ServiceStatus -computername
+# Get-ServiceStatus -computername <tab>

@@ -7,7 +7,7 @@ This repository contains my demonstrations files for my Techmentor/Live360 prese
 Is PowerShell a part of your daily work routine?
 Are you doing more than simply running scripts?
 Do you want to?
-In this lightning-quick sessionPowerShell expert Jeff Hicks will share a number of tricks and tools for getting more done with PowerShell faster.
+In this lightning-quick session PowerShell expert Jeff Hicks will share a number of tricks and tools for getting more done with PowerShell faster.
 Hate typing?
 Then this is the session for you.
 

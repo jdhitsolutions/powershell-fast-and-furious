@@ -14,10 +14,10 @@ help pushd
 help popd
 
 pushd
-cd \
+cd c:\
 popd
 
-cd \work
+cd C:\work
 pushd -StackName a 
 cd c:\scripts
 pushd -StackName b
@@ -33,7 +33,7 @@ get-location -StackName a
 cd ~
 pushd -StackName c
 get-location -StackName c
-cd windows
+cd c:\windows
 pushd -StackName c
 
 #but only the last one can really be used
@@ -50,10 +50,11 @@ get-location -StackName c
 gcm -noun alias
 
 #make PowerShell easier for yourself
-set-alias aka get-alias
+set-alias -name aka -value get-alias
 aka
 
 #works for any command line executable
+set-alias -Name np -value notepad.exe -Force
 get-alias np
 np
 
@@ -76,7 +77,6 @@ get-service bits -Comp (cat .\computers.txt) | select name,status,machinename
 
 #endregion
 
-
 #region Custom type extensions
 
 psedit .\demo-updatetypedata.ps1
@@ -84,6 +84,7 @@ psedit .\demo-updatetypedata.ps1
 #endregion
 
 #region Autocompleters
+
 psedit .\Demo-AutoCompleter.ps1
 
 #endregion
@@ -117,7 +118,7 @@ Invoke-Item -Path $(Get-PSReadlineOption).HistorySavePath
 
 Set-PSReadlineKeyHandler @p
 
-
 #some of my handles
 psedit .\mypsreadeline.ps1 
+
 #endregion
